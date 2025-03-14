@@ -1,7 +1,9 @@
 # 一个修改科大讯飞fif口语平台的软件
 
 ### 已经打包成了exe版本，链接通过网盘分享的文件：fif5mmCQUPT.zip
-链接: https://pan.baidu.com/s/1LobV7qUtlpby78MRYVi1GQ?pwd=5mm9 提取码: 5mm9
+通过网盘分享的文件：fif5mmCQUPT.zip
+通过网盘分享的文件：fif5mmCQUPT.zip
+链接: https://pan.baidu.com/s/1Hkt66u8mXCIui7cC3sBcOQ?pwd=5mm9 提取码: 5mm9
 ### 里面带有环境，所以有一百多mb，（不会python）
 
 ---
@@ -25,9 +27,10 @@ Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbl9uYW1lIjoiY3F1cHQyMDI0MjEy
 
 这里的
 
-Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbl9uYW1lIjoiY3F1cHQyMDI0MjEyMDY4IiwidXNlcl9pZCI6ImY2ZGQxYzFiZjI0YTQ4MWViMjAyYTNjN2ZiNDUwYzNiIiwidXNlcl9rZXkiOiI3MTFjZDc0NGI2NTk0OGUwOTMxZGY3ZWM3ZGU3ZjdiOCIsImV4cCI6MTc0MTkyMzYxMCwiaWF0IjoxNzQxOTE2NDEwfQ.5xS-oTnerFDrpXtraCep6CwedDiD2v0IUleJvbM5fM0
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbl9uYW1lIjoiY3F1cHQyMDI0MjEyMDY4IiwidXNlcl9pZCI6ImY2ZGQxYzFiZjI0YTQ4MWViMjAyYTNjN2ZiNDUwYzNiIiwidXNlcl9rZXkiOiI3MTFjZDc0NGI2NTk0OGUwOTMxZGY3ZWM3ZGU3ZjdiOCIsImV4cCI6MTc0MTkyMzYxMCwiaWF0IjoxNzQxOTE2NDEwfQ.5xS-oTnerFDrpXtraCep6CwedDiD2v0IUleJvbM5fM0
 
-就是我们需要的Token
+就是我们需要的Token（去掉Bearer）
+token有时效性，一段时间内token有效，目测是30分钟
 
 接着打开程序输入url，token即可
 
@@ -41,4 +44,4 @@ Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbl9uYW1lIjoiY3F1cHQyMDI0MjEy
 
 token照理来说是应该可以通过登陆接口获得，可惜我不懂前端
 
-有懂得大佬可以修改一下，或者前端大佬做个自动截取token的浏览器插件会很不错！
+有懂的大佬可以修改一下，或者前端大佬做个自动截取token的浏览器插件会很不错！
