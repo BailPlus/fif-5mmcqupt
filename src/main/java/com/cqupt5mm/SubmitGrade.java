@@ -18,13 +18,11 @@ import java.util.List;
 
 public class SubmitGrade {
     CloseableHttpClient httpclient = HttpClients.createDefault();
-    public void submitGrade(List<questions> questions, List<String> LevelIds, String userId, String taskId, int low, int high, int time) {
+    public void submitGrade(List<String> questions, List<String> LevelIds, String userId, String taskId, int low, int high, int time, int num) {
         for(int i = 0;i < questions.size();i++) {
-            questions question = questions.get(i);
-            String questionId = question.questionId;
-            Integer num = question.number;
-            if(num < 10)
-                num = 10;
+            String questionId = questions.get(i);
+            if(num < 20)
+                num = 20;
             for(int j = 0;j < num;j++) {
                 JSONArray ResultJson = generateAnswer(questionId, j,low,high,time);
                 String resultJson = JSONUtil.toJsonStr(ResultJson);
