@@ -1,5 +1,10 @@
 # 一个修改科大讯飞fif口语平台的软件
 
+### 已经打包成了exe版本，链接通过网盘分享的文件：fif5mmCQUPT.zip
+链接: https://pan.baidu.com/s/1LobV7qUtlpby78MRYVi1GQ?pwd=5mm9 提取码: 5mm9
+### 里面带有环境，所以有一百多mb，（不会python）
+
+---
 只需要两个东西：
 
 1.模块URL
@@ -26,13 +31,13 @@ Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbl9uYW1lIjoiY3F1cHQyMDI0MjEy
 
 接着打开程序输入url，token即可
 
+（不会的话可以搜一下如何获取网页请求头中的token或问ai！）
+
 ----
 
 原理是抓接口，发现fif平台的修改成绩的接口没鉴权，而查询题目的接口需要鉴权
 
 所以可以拿到token去拿到题目，再一次性修改题目成绩
-
-目前版本写死了成绩是90-100随机数，用时5-10之间
 
 token照理来说是应该可以通过登陆接口获得，可惜我不懂前端
 
