@@ -1,10 +1,8 @@
 # 一个修改科大讯飞fif口语平台的软件
 
-### 已经打包成了exe版本，链接通过网盘分享的文件：fif5mmCQUPT.zip
-通过网盘分享的文件：fif5mmCQUPT.zip
-通过网盘分享的文件：fif5mmCQUPT.zip
+### 感谢由"草莓味小南梁提供的python版，exe位于fif_python.zip，源代码fif_python"
+### 当python出问题时可以试下java版，链接如下（比较大，带有环境）：
 链接: https://pan.baidu.com/s/1Hkt66u8mXCIui7cC3sBcOQ?pwd=5mm9 提取码: 5mm9
-### 里面带有环境，所以有一百多mb，（不会python）
 
 ---
 只需要两个东西：
