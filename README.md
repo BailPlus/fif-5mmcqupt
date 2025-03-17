@@ -55,7 +55,7 @@ Python控制台版本打包后大概是Java版的1/10，GUI版大概是1/2左右
 
 By Kafka           
 
-[打包版下载](https://github.com/Thanwinde/fif-5mmcqupt/blob/master/fif_python.zip)  
+Python版即为目录中 fif_python.zip
 
 
 
