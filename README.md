@@ -45,3 +45,28 @@ token有时效性，一段时间内token有效，目测是30分钟
 token照理来说是应该可以通过登陆接口获得，可惜我不懂前端
 
 有懂的大佬可以修改一下，或者前端大佬做个自动截取token的浏览器插件会很不错！
+
+----
+增加了Python版本，基于~AI~PyQt5做了GUI~（太伟大了GPT）~，Python版本基本上都是基于Java源码进行了翻译
+
+例如使用了requests库进行请求，json库进行解析，面向过程编程居多（飞舞不会OOP）
+
+Python控制台版本打包后大概是Java版的1/10，GUI版大概是1/2左右
+
+感谢Thanwinde开源，以及教我这个连GitHub协作开发都不太会用的飞舞基本的协作常识
+
+By Kafka           
+
+[打包版下载](https://github.com/Thanwinde/fif-5mmcqupt/blob/master/fif_python.zip)  
+
+
+
+
+
+
+
+
+
+
+
+
