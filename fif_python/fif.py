@@ -2,6 +2,7 @@ import sys
 import requests
 import json
 import random
+from urllib.parse import urlparse, parse_qs
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QFormLayout, QLineEdit, QPushButton,
     QMessageBox, QVBoxLayout, QSpinBox, QTextEdit
@@ -22,24 +23,32 @@ def get_user_id(token: str) -> str:
     response = requests.post(url, headers=headers)
     response.raise_for_status()
     data = response.json()
+    if data['status'] != 1:
+        raise RuntimeError(f'获取用户身份失败： {data['msg']}')
     return data["data"]["userId"]
 
 
 def parse_unit_info(url: str) -> dict:
-    query_string = url.split("?")[1]
-    params = query_string.split("&")
-    unitid = params[0].split("=")[1]
-    taskId = params[1].split("=")[1]
+    params = parse_qs(urlparse(url.replace('#','')).query)
+    if 'unitId' not in params or 'taskId' not in params:
+        raise ValueError("URL格式错误")
+    unitid = params['unitId'][0]
+    taskId = params['taskId'][0]
     return {'unitid': unitid, 'taskid': taskId}
 
 
-def get_levels(unitid: str, token: str) -> list:
-    url = f"https://moral.fifedu.com/kyxl-app/stu/column/stuUnitInfo?unitId={unitid}"
+def get_levels(unitid: str, taskid: str, token: str) -> list:
+    url = f"https://moral.fifedu.com/kyxl-app/stu/column/stuUnitInfo"
+    params = {
+        'unitId': unitid,
+        'taskId': taskid,
+        'bankType': ''
+    }
     headers = {
         "source": "10003",
         "Authorization": token
     }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, params=params, headers=headers)
     response.raise_for_status()
     data = response.json()
     level_list = data["data"]["levelList"]
@@ -126,7 +135,7 @@ class Worker(QThread):
             unit_info = parse_unit_info(self.url)
             unit_id = unit_info["unitid"]
             task_id = unit_info["taskid"]
-            level_ids = get_levels(unit_id, self.token)
+            level_ids = get_levels(unit_id, task_id, self.token)
             questions = get_question_ids(level_ids, self.token)
             user_id = get_user_id(self.token)
             submit_grades(questions, level_ids, user_id, task_id,
@@ -182,7 +191,7 @@ class MainWindow(QWidget):
         self.setLayout(layout)
 
     def start_submission(self):
-        token = self.token_input.text().strip()
+        token = 'Bearer ' + self.token_input.text().strip()
         url = self.url_input.text().strip()
         min_score = self.min_input.value()
         max_score = self.max_input.value()
